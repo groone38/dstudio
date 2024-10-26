@@ -1,0 +1,35 @@
+// {
+//   "files": [],
+//   "references": [
+//     { "path": "./tsconfig.app.json" },
+//     { "path": "./tsconfig.node.json" }
+//   ]
+// }
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "lib": ["ES2015", "DOM", "ES2017"],
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
+
+    //  За место common.js используем import
+    "esModuleInterop": true,
+    // Для поддержки дефолтного инмопрта
+    "allowSyntheticDefaultImports": true
+    //   "types": ["@testing-library/jest-dom"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}

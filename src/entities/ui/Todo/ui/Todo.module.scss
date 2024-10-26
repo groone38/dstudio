@@ -1,0 +1,33 @@
+.todo {
+  font: var(--font-p);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-black);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+.title {
+  font: var(--font-h2);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.description {
+  margin-bottom: 8px;
+}
+
+.dueDate {
+  font: var(--font-small);
+  color: var(--color-light-gray);
+}
+
+.completed {
+  background-color: var(--color-light-green);
+}

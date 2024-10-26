@@ -1,0 +1,36 @@
+.checkbox {
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.custom_checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  background-color: var(--color-black);
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.custom_checkbox::before {
+  content: "";
+  display: inline-block;
+  background-image: url("./check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%) scale(0);
+  transition: all 0.1s ease-in-out;
+}
+
+.checkbox:checked + .custom_checkbox::before {
+  transform: translate(-50%, -30%) scale(1);
+}
