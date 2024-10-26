@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Front end React developer challenge
+Section 1 Web application
+A company needs an internal web application for employees to manage tasks. The API for this
+application has been built already, and the next step is to build a UI using React.
+API
+API is available via this URL: http://api.calmplete.net/swagger/index.html
+You can create a new account using endpoint api/InternalLogin/sign-up, then get an access token using
+endpoint api/InternalLogin with parameter state = “Internal”. Then you can use api/Todos endpoints to
+manage your tasks passing “Bearer <access_token>” in the “Authorization” header of all HTTP requests.
+UI
+UI is to create in this developer challenge.
+Functional requirements:
+There should be a page with tasks (todos), that displays tasks titles and due dates. There should be a
+button to create a new task. If the user clicks this button a dialog or a new page should open, where the
+user can enter a new task’s title, description and select a due date. After the user saves the task, this task
+should be presented on the tasks page. Also, there should be a possibility to edit a previously created
+task and an option to mark a task as completed.
+Non-functional requirements:
+The application should be well structured to allow a further extension and new features implementation.
+The application should be built using one of existing React UI frameworks of the developer choice. The
+application can use existing packages/libraries for sending HTTP requests, managing state, storing data in
+internal storage if needed, etc. The application can use a hard-coded access token to access the API.
+Thank you and good luck!
